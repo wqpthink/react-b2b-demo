@@ -3,7 +3,9 @@ import {connect} from 'react-redux';
 import {} from './home-style';
 // import home_styles from './home-styles.scss';
 import './home-test-styles.scss';
+import attachBasicLayout from 'layout/attachBasicLayout';
 
+@attachBasicLayout
 class Home extends PureComponent{
 
     render(){
