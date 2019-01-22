@@ -7,7 +7,8 @@
     "license": "ISC",
     "scripts": {
         "build": "node src/conf/assembly-reducer.js && webpack --config webpack.config.js --progress --display-modules --colors --display-reason",
-        "start": "node src/conf/assembly-reducer.js && webpack-dev-server --config webpack.config.dev.js --progress --display-modules --colors --display-reason"
+        "start": "node src/conf/assembly-reducer.js && webpack-dev-server --config webpack.config.dev.js --progress --display-modules --colors --display-reason",
+        "test": ""
     },
     "dependencies": {
         "react": "16.7.0",

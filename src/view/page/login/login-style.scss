@@ -1,0 +1,17 @@
+//登录页面样式文件
+
+.login-bg{
+    background-image: url("../../../asset/image/login_bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-panel{
+    width: 30vw;
+    height: 35vh;
+    background-color: blue;
+    text-align: center;
+    line-height: 35vh;
+}

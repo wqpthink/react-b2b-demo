@@ -9,6 +9,7 @@ module.exports = function(entrys, webpack_mode){
                 template: "./src/asset/template.html",
                 filename: filename_tmp,
                 title: "react b2b demo",
+                favicon: '',
                 chunks: [`${key}`],
                 minify: webpack_mode !== 'production' ? false : {
                     removeComments: true,

@@ -14,8 +14,8 @@ module.exports = {
     entry: entrys,
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'js/[name].[hash].js',
-        chunkFilename: 'js/[name].[chunkhash].js'
+        filename: 'static/js/[name].[hash].js',
+        chunkFilename: 'static/js/[name].[chunkhash].js'
     },
     module: {
         rules: [
@@ -24,11 +24,11 @@ module.exports = {
                 loader: require.resolve('url-loader'),
                 options: {
                   limit: 10000,
-                  name: 'static/media/[name].[hash:8].[ext]',
+                  name: 'static/image/[name].[hash:8].[ext]',
                 },
             },
             {
-                test: /\.(scss|css)$/,
+                test: /\.css$/,
                 use: [
                     require.resolve('style-loader'),
                     {loader: 'css-loader', options: {importLoaders: 1}},
@@ -54,6 +54,14 @@ module.exports = {
                 ]
             },
             {
+                test: /.scss$/,
+                use: [
+                    require.resolve('style-loader'),
+                    {loader: 'css-loader', options: {importLoaders: 1}},
+                    require.resolve('sass-loader')
+                ]
+            },
+            {
                 test: /\.(jsx|js)$/,
                 exclude: /(node_modules)/,
                 use: {
@@ -64,7 +72,7 @@ module.exports = {
                 exclude: [/\.(jsx|js)$/, /\.html$/, /\.json$/, /\.scss$/],
                 loader: require.resolve('file-loader'),
                 options: {
-                    name: 'static/media/[name].[hash:8].[ext]'
+                    name: 'static/image/[name].[hash:8].[ext]'
                 }
             }
         ]

@@ -10,19 +10,11 @@ module.exports = {
     entry: entrys,
     output: {
         path: path.resolve(__dirname, 'dev'),
-        filename: 'js/[name].[hash:8].js',
-        chunkFilename: 'js/[name].[chunkhash:8].js'
+        filename: 'static/js/[name].[hash:8].js',
+        chunkFilename: 'static/js/[name].[chunkhash:8].js'
     },
     module: {
         rules: [
-            {
-                test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-                loader: require.resolve('url-loader'),
-                options: {
-                  limit: 10000,
-                  name: 'static/media/[name].[hash:8].[ext]',
-                },
-            },
             {
                 test: /\.(scss|css)$/,
                 use: [
@@ -61,7 +53,7 @@ module.exports = {
                 exclude: [/\.(jsx|js)$/, /\.html$/, /\.json$/, /\.scss$/],
                 loader: require.resolve('file-loader'),
                 options: {
-                    name: 'static/media/[name].[hash:8].[ext]'
+                    name: 'static/image/[name].[hash:8].[ext]'
                 }
             }
         ]
